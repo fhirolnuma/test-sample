@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>価格:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>メーカー:</strong>
+  <%= @product.vendor %>
+</p>
+
+<%= link_to '編集する', edit_product_path(@product) %> |
+<%= link_to 'TOPに戻る', products_path %>

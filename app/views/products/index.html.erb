@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>商品一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>価格</th>
+      <th>メーカー</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.vendor %></td>
+        <td><%= link_to '詳しく見る', product %></td>
+        <td><%= link_to '編集する', edit_product_path(product) %></td>
+        <td><%= link_to '削除する', product, method: :delete, data: { confirm: '削除しても良いですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '商品を登録する', new_product_path %>
